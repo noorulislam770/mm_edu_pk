@@ -44,37 +44,37 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          # php-version: '8.0'
+          php-version: '8.1'
           extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql
           tools: composer:v2
 
-      # - name: Install dependencies
-      #   run: composer install --prefer-dist --no-progress --no-suggest
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Update Dependencies
         run: composer update
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
+      # - name: Setup Node
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: '16'
 
-      - name: Install front-end dependencies
-        run: npm install
+      # - name: Install front-end dependencies
+      #   run: npm install
 
       # - name: Compile assets
       #   run: npm run production
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            vendor
-            node_modules
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
-            ${{ runner.os }}-node-
+      # - name: Cache dependencies
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: |
+      #       vendor
+      #       node_modules
+      #     key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}-node-${{ hashFiles('**/package-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-composer-
+      #       ${{ runner.os }}-node-
 
       # - name: Push changes
       #   run: git push origin master
