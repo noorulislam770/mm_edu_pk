@@ -15,7 +15,7 @@
 #       with:
 #         node-version: '14'
 
-#     - name: 📂 Sync files
+#     - name: 📂 Sync filess
 #       uses: SamKirkland/FTP-Deploy-Action@4.2.0
 #       with:
 #         server: ${{ secrets.FTP_SERVER }}
