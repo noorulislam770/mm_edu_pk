@@ -62,8 +62,8 @@ jobs:
       - name: Install front-end dependencies
         run: npm install
 
-      - name: Compile assets
-        run: npm run production
+      # - name: Compile assets
+      #   run: npm run production
 
       - name: Cache dependencies
         uses: actions/cache@v2
