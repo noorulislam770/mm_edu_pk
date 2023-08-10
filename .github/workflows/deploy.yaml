@@ -51,6 +51,9 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
+      -name: Update Dependencies
+        run: composer update
+
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
