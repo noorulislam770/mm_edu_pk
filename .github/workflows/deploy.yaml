@@ -51,7 +51,7 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
-      -name: Update Dependencies
+      - name: Update Dependencies
         run: composer update
 
       - name: Setup Node
